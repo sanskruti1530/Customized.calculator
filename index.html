@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Calculator with History</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light">
+  <div class="calculator">
+    <div id="display-container">
+      <input type="text" id="display" readonly>
+      <button id="copy-btn">📋</button>
+    </div>
+
+    <div class="buttons">
+  <button class="btn">(</button>
+  <button class="btn">)</button>
+  <button id="ac-btn" class="btn">AC</button>
+  <button id="backspace-btn" class="btn">⌫</button>
+  <button class="btn">/</button>
+
+  <button class="btn">7</button>
+  <button class="btn">8</button>
+  <button class="btn">9</button>
+  <button class="btn">*</button>
+
+  <button class="btn">4</button>
+  <button class="btn">5</button>
+  <button class="btn">6</button>
+  <button class="btn">-</button>
+
+  <button class="btn">1</button>
+  <button class="btn">2</button>
+  <button class="btn">3</button>
+  <button class="btn">+</button>
+
+  <button class="btn">0</button>
+  <button class="btn">.</button>
+  <button class="btn">=</button>
+</div>
+
+
+    <div class="theme-switcher">
+      <button onclick="setTheme('light')">Light</button>
+      <button onclick="setTheme('dark')">Dark</button>
+      <button onclick="setTheme('neon')">Neon</button>
+    </div>
+  </div>
+
+  <!-- History Panel -->
+  <div class="history-panel">
+    <h3>History</h3>
+    <ul id="history"></ul>
+    <button id="clear-history-btn">Clear History</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

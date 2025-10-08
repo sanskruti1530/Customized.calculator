@@ -1,0 +1,242 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  margin: 0;
+  transition: background 0.5s, color 0.5s;
+}
+
+.calculator {
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 250px;
+}
+
+#display-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+#display {
+  flex: 1;
+  padding: 10px;
+  font-size: 1.2em;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+#copy-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+#copy-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Buttons */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.btn {
+  padding: 15px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn:active {
+  transform: scale(0.9);
+}
+
+/* Theme Switcher */
+.theme-switcher {
+  margin-top: 15px;
+}
+.theme-switcher button {
+  margin: 0 5px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* History Panel */
+.history-panel {
+  width: 200px;
+  padding: 15px;
+  border-radius: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.history-panel h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+  text-align: center;
+}
+.history-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.history-panel li {
+  padding: 6px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  animation: slideIn 0.4s ease;
+}
+@keyframes slideIn {
+  from { transform: translateX(50%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+/* Light Theme */
+body.light {
+  background: #f8f9fa;
+  color: #000;
+}
+body.light .calculator {
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+body.light .btn { background: #e9ecef; }
+body.light .btn:hover { background: #dee2e6; transform: translateY(-3px); }
+body.light #display {
+  background: #fff;
+  box-shadow: 0 0 10px #ccc;
+  animation: softGlow 3s infinite alternate;
+}
+@keyframes softGlow {
+  from { box-shadow: 0 0 5px #ccc; }
+  to   { box-shadow: 0 0 15px #aaa; }
+}
+body.light #copy-btn { background: #ddd; color: #000; }
+body.light #copy-btn:hover { background: #bbb; }
+body.light .history-panel {
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+body.light .history-panel li { background: #e9ecef; }
+
+/* Dark Theme */
+body.dark {
+  background: #121212;
+  color: #fff;
+  animation: pulseDark 8s infinite ease-in-out;
+}
+@keyframes pulseDark {
+  0% { background-color: #121212; }
+  50% { background-color: #1c1c1c; }
+  100% { background-color: #121212; }
+}
+body.dark .calculator {
+  background: #1f1f1f;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+body.dark .btn { background: #2a2a2a; color: #fff; }
+body.dark .btn:hover { background: #333; }
+body.dark #display { background: #000; color: #0f0; }
+body.dark #copy-btn { background: #444; color: #fff; }
+body.dark #copy-btn:hover { background: #666; }
+body.dark .history-panel { background: #1f1f1f; }
+body.dark .history-panel li { background: #2a2a2a; }
+
+/* Neon Theme */
+body.neon {
+  background: #0d0d0d;
+  color: #0ff;
+}
+body.neon .calculator {
+  background: #111;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #f0f;
+}
+body.neon .btn {
+  background: #222;
+  color: #fff;
+  box-shadow: 0 0 10px #0ff;
+}
+body.neon .btn:active {
+  box-shadow: 0 0 20px #0ff, 0 0 40px #f0f;
+  transform: scale(0.95);
+}
+body.neon #display {
+  background: #000;
+  color: #0ff;
+  animation: flicker 1.5s infinite alternate;
+}
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.4; }
+}
+body.neon #copy-btn { background: #0ff; color: #000; }
+body.neon #copy-btn:hover { background: #f0f; color: #fff; }
+body.neon .history-panel {
+  background: #111;
+  box-shadow: 0 0 10px #0ff;
+}
+body.neon .history-panel li {
+  background: #222;
+  color: #0ff;
+  box-shadow: 0 0 10px #0ff;
+}
+
+
+.history-panel li {
+  padding: 6px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  animation: slideIn 0.4s ease;
+}
+
+.history-panel li:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* Special styling for AC button */
+#ac-btn {
+  background: #ff4d4d;
+  color: white;
+}
+#ac-btn:hover {
+  background: #e60000;
+}
+
+#backspace-btn {
+  background: #ff9933;
+  color: white;
+}
+#backspace-btn:hover {
+  background: #e67300;
+}
+#clear-history-btn {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #ff4d4d;
+  color: white;
+  transition: background 0.3s, transform 0.2s;
+}
+#clear-history-btn:hover {
+  background: #e60000;
+  transform: scale(1.05);
+}
